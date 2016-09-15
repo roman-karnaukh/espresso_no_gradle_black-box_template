@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- package name must be unique so suffix with "tests" so package loader doesn't ignore us -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.espresso.black_box"
+          android:versionCode="18"
+          android:versionName="1.0">
+
+    <application >
+        <uses-library android:name="android.test.runner"/>
+        <activity
+            android:name="com.espresso.black_box.activity.EspressoTestActivity"
+            android:label="Espresso Tests"
+            android:icon="@drawable/coffee_beans"
+            android:theme="@style/MyStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.espresso.black_box.activity.NotifyService"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="com.espresso.black.tests.showtoast" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+    </application>
+
+    <uses-permission android:name="android.permission.GET_CLIPS" />
+    <uses-permission android:name="android.permission.READ_CLIPBOARD" />
+    <uses-permission android:name="android.permission.WRITE_CLIPS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!--
+    This declares that this application uses the instrumentation test runner targeting
+    the package of your.package.name.  To run the tests use the command:
+    "adb shell am instrument -w com.espresso.black_box/android.support.test.runner.AndroidJUnitRunner"
+    -->
+    <instrumentation android:name="android.support.test.runner.AndroidJUnitRunner"
+                     android:targetPackage="your.package.name"
+                     android:label="Tests for your.package.name"/>
+</manifest>
