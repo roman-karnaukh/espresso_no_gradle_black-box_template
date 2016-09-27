@@ -24,6 +24,8 @@ import static com.espresso.black_box.environment.helpers.Report.CLASS_NAME;
 import static com.espresso.black_box.environment.helpers.Report.EXCEPTIONS;
 import static com.espresso.black_box.environment.helpers.Report.TEST_METHOD_NAME;
 import static com.espresso.black_box.environment.helpers.Report.traceToStr;
+import static com.espresso.black_box.environment.helpers.ResourcesGetter.getResources;
+import static com.espresso.black_box.environment.helpers.ResourcesGetter.getStrings;
 
 /**
  * Created by Karnaukh Roman on 07.07.2016.

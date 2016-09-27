@@ -16,31 +16,19 @@ public class R {
         return targetContext.getResources().getString(id);
     }
 
-
     public static int id(String s) {
-        return id(targetContext, packageName, s );
-    }
-
-    public static int id(Context targetContext,  String packageName, String s) {
         return targetContext.getResources().getIdentifier(s, "id", packageName);
     }
 
     public static int string(String s) {
-        return string(targetContext, packageName, s );
+        return targetContext.getResources().getIdentifier(s, "string", packageName);
     }
-
-    public static int string(Context targetContext,  String packageName, String s) {
-       return targetContext.getResources().getIdentifier(s, "string", packageName);
-    }
-
 
     public static class id{
-
         public static int decor_content_parent = id("decor_content_parent");
     }
 
     public static class string{
         public static int discount_club = string("discount_club");
-
     }
 }

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.test.espresso.NoMatchingViewException;
@@ -78,7 +79,7 @@ import static org.hamcrest.Matchers.hasToString;
 import static org.hamcrest.core.IsNot.not;
 import static org.junit.Assert.assertTrue;
 
-@TargetApi(16)
+@TargetApi(Build.VERSION_CODES.KITKAT)
 public  class Actions {
     private static final String SERVICE_PACKAGE = "com.espresso.black.tests.showtoast";
     public static SharedPreferences sPref;
@@ -741,6 +742,7 @@ public  class Actions {
             System.out.println("ROBO message - perhaps it is SMARTPHONE ");
         }
     }
+
 
 
     public static void writeToFile(String filename, String data) {
